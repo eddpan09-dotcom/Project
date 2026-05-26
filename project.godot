@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Eddie-Year-11-2026-GodohProject"
-run/main_scene="res://bird_charactrer.tscn"
+run/main_scene="uid://cb56m2d7x6kpe"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
