@@ -98,7 +98,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6pxi"]
 size = Vector2(594, 474)
 
-[node name="Bird_Charactrer" type="CharacterBody2D"]
+[node name="Bird_Charactrer" type="CharacterBody2D" groups=["bird"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_v6pxi")
 

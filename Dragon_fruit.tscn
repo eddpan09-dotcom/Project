@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://ir725dljr5gp"]
+
+[ext_resource type="Script" uid="uid://dxuaswrvsb6od" path="res://dragon_fruit.gd" id="1_3m0gm"]
+[ext_resource type="Texture2D" uid="uid://bd6yqle632uec" path="res://Fruit/Fruit+.png" id="1_sq6gf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah6ka"]
+atlas = ExtResource("1_sq6gf")
+region = Rect2(320, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m0gm"]
+atlas = ExtResource("1_sq6gf")
+region = Rect2(320, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvadh"]
+atlas = ExtResource("1_sq6gf")
+region = Rect2(320, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60m3l"]
+atlas = ExtResource("1_sq6gf")
+region = Rect2(320, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjcba"]
+atlas = ExtResource("1_sq6gf")
+region = Rect2(320, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmlub"]
+atlas = ExtResource("1_sq6gf")
+region = Rect2(320, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ck7mm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah6ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m0gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvadh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60m3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjcba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmlub")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3m0gm"]
+radius = 18.1108
+
+[node name="Fruit" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_3m0gm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -0.875)
+scale = Vector2(1.803, 2)
+sprite_frames = SubResource("SpriteFrames_ck7mm")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.0606976
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3m0gm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
